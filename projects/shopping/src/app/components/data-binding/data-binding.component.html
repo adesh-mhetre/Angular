@@ -1,0 +1,120 @@
+<!-- <div class="container-fluid">
+    <h2>One way binding</h2>
+    User Name: <input type="text" value="{{Username}}">
+    <br><br>
+    <h3>Hello ! <span>{{Username}}</span></h3>
+</div> -->
+
+<!-- <div class="container-fluid">
+    <h2>Interpolation</h2>
+    <dl>
+        <dt>Stock</dt>
+        <dd>
+            <input type="checkbox" checked="{{Stock}}"> Available {{Stock}}
+        </dd>
+    </dl>
+</div>
+
+<div class="container-fluid">
+    <h2>Property Binding</h2>
+    <dl>
+        <dt>Stock</dt>
+        <dd>
+            <input type="checkbox" [checked]="Stock"> Available {{Stock}}
+        </dd>
+    </dl>
+</div>
+ -->
+
+ <!-- <div class="container-fluid">
+    <h2>Attribute</h2>
+    <table border="1" [width]="tWidth" [attr.height]="theight">
+        <tr>
+            <td>User Name</td>
+        </tr>
+    </table>
+</div> -->
+
+
+<!-- <div class="container-fluid">
+    <h2>Two way binding</h2>
+    User Name: <input type="text" [(ngModel)]="Username">
+    <br><br>
+    <h3>Hello ! <span>{{Username}}</span></h3>
+</div> -->
+
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+             <h2>Register Product</h2>
+             <dl>
+                <dt>Name</dt>
+                <dd><input type="text" [(ngModel)]="Product.Name" class="from-control"></dd>
+                <dt>Price</dt>
+                <dd><input type="text" [(ngModel)]="Product.Price" class="from-control"></dd>
+                <dt>Stock</dt>
+                <dd class="form-switch"><input type="checkbox" [(ngModel)]="Product.Stock" class="form-check-input">Available</dd>
+                <dt>Shipped to</dt>
+                <dd >
+                    <select [(ngModel)]="Product.ShippedTO" class="form-select">
+                        <option>Delhi</option>
+                        <option>Pune</option>
+                        <option>Mumbai</option>
+                    </select>
+                </dd>
+             </dl>
+             <button (click)="RegisterClick()" class="btn btn-primary w-100">Register</button>
+        </div>
+        <div class="col-9 ">
+            <h2>Details</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd [innerText]="UpdatedProduct.Name"></dd>
+                <dt>Price</dt>
+                <dd> {{UpdatedProduct.Price}}</dd>
+                <dt>Stock</dt>
+                <dd>{{(UpdatedProduct.Stock)==true?"Available":"Out of Stock"}}</dd>
+                <dt>Shipped to</dt>
+                <dd [innerText]="UpdatedProduct.ShippedTO"></dd>
+             </dl>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+             <h2>Register Product</h2>
+             <dl>
+                <dt>Name</dt>
+                <dd><input type="text" ngModel #Name="ngModel" class="from-control"></dd>
+                <dt>Price</dt>
+                <dd><input type="text" ngModel #Price="ngModel" class="from-control"></dd>
+                <dt>Stock</dt>
+                <dd class="form-switch"><input ngModel #Stock="ngModel" type="checkbox"  class="form-check-input">Available</dd>
+                <dt>Shipped to</dt>
+                <dd >
+                    <select ngModel #ShippedTO="ngModel" class="form-select">
+                        <option>Delhi</option>
+                        <option>Pune</option>
+                        <option>Mumbai</option>
+                    </select>
+                </dd>
+             </dl>   
+        </div>
+        <div class="col-9 ">
+            <h2>Details</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd>{{Name.value}}</dd>
+                <dt>Price</dt>
+                <dd>{{Price.value}}</dd>
+                <dt>Stock</dt>
+                <dd>{{(Stock.value==true)?"Available":"Out of Stock"}}</dd>
+                <dt>Shipped to</dt>
+                <dd>{{ShippedTO.value}}</dd>
+             </dl>
+        </div>
+    </div>
+</div> -->

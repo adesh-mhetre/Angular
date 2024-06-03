@@ -1,0 +1,37 @@
+ <!-- <div class="container-fluid">
+    <h2>Event Binding</h2>
+    <button (click)="InsertClick($event)" id="btnInsert" name="InsertButton" class="btn btn-primary">Insert</button>
+ </div> -->
+
+ <!-- <div class="container-fluid" (mousemove)="MouseMove($event)">
+   <h2>Shoe</h2>
+   <img width="200" [src]="img_src" height="100">
+      <div class="mt-2">
+         <div class="btn-group">
+         <button (mouseover)="changeColor($event)" name="" class="text-dark" style="background-color: white;">White</button>
+         <button (mouseover)="changeColor($event)" name="Red" class="text-white" style="background-color: red;">Red</button>
+         <button (mouseover)="changeColor($event)" name="Green" class="text-white" style="background-color: green;">Green</button>
+         <button (mouseover)="changeColor($event)" name="Blue" class="text-white" style="background-color: blue;">Blue</button>
+      </div>
+   </div>
+   <div style="height: 1000px;"></div>
+      <img src="assets/flag.gif" [ngStyle]="styleObject" width="50" height="50">
+ </div>
+    -->
+
+
+    <!--------------Key Press------------->
+
+    <div class="container-fluid">
+      <h2>Register User</h2>
+      <dl>
+         <dt>User Name</dt>
+         <dd><input type="text" (blur)="verifyRequired($event)" [ngClass]="{ 'text-danger':isInValid,'text-success':true,}"  (keyup)="VerifyUser($event)"></dd>
+         <dd [ngClass]="{ 'text-danger':isInValid,'text-success':true,}" >{{UserError}}</dd>
+         <dt>Password</dt>
+         <dd><input (keypress)="CapsOn($event)"  type="password"></dd>
+         <dd *ngIf="capsOn" class="text-warning">
+            <span class="bi bi-exclamation-triangle-fill"></span>Caps ON
+         </dd>
+      </dl>
+    </div>

@@ -1,0 +1,36 @@
+
+<div class="container-fluid">
+    <h2 class="text-center">Personal Loan EMI Calculator</h2>
+    <div class="border border-2 border-dark p-3">
+        <div class="row">
+            <div class="col">
+                Amount you need &#8377; <input type="text" [value]="p" >
+            </div>
+            <div class="col">
+                For <input type="text" size="4" [value]="n" > years
+            </div>
+            <div class="col">
+                Interest rate <input type="text" size="4" [value]="r" > %
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                &#8377; 10,000 <input (change)="AmountChange($event)" type="range" value="10000" min="10000" max="1000000" > &#8377; 10,00,000
+            </div>
+            <div class="col">
+                1 <input (change)="YearChange($event)" type="range" value="1" min="1" max="5"> 5 
+            </div>
+            <div class="col">
+                10.25% <input (change)="RateChange($event)" type="range" value="10.25" step="0.1" min="10.25" max="18.45"> 18.45 %
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <button (click)="CalculateClick()" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+        <h1 class="text-center mt-4">
+            Your monthly installment is <span class="text-primary">{{emi | currency:'INR'}}</span> for {{n}} years.
+        </h1>
+    </div>
+</div>

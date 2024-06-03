@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-2">
+      <div class="btn-group-vertical">
+        <button (click)="ViewClick('View1')" class="btn btn-primary w-100 mb-2">
+          Basic Details
+        </button>
+        <button (click)="ViewClick('View2')" class="btn btn-primary w-100 mb-2">
+          Preview
+        </button>
+        <button (click)="ViewClick('View3')" class="btn btn-primary w-100">
+          Description
+        </button>
+      </div>
+      <div class="mt-4">
+        <select [(ngModel)]="ViewName" class="form-select">
+          <option value="Info">Select Info</option>
+          <option value="View1">Basic Details</option>
+          <option value="View2">Preview</option>
+          <option value="View3">Description</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-10">
+      <div [ngSwitch]="ViewName">
+        <div *ngSwitchCase="'View1'">
+          <div>
+            <h3>Apple iPhone 15 (Black, 128 GB)</h3>
+          </div>
+
+          <div class="mt-3">
+            <span class="bg-success p-2 rounded rounded-2"
+              ><span class="bi bi-star-fill text-success text-white"
+                >4.633</span
+              >
+            </span>
+            <span class="ms-3">826 Ratings & 1,987 Reviews</span>
+          </div>
+          <div>
+            <div class="mt-3">
+              <span
+                ><h3>₹70,999</h3>
+                <del>₹79900 </del>11% off
+              </span>
+            </div>
+            <div>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="bi bi-tag-fill text-success"> </span> Bank
+                  OfferGet ₹50 instant discount on first Flipkart UPI txn on
+                  order of ₹200 and above
+                </li>
+
+                <li>
+                  <span class="bi bi-tag-fill text-success"></span>
+                  Bank Offer5% Cashback on Flipkart Axis Bank CardT&C
+                </li>
+
+                <li>
+                  <span class="bi bi-tag-fill text-success"></span>
+                  Bank Offer₹4000 Off On ICICI Bank Credit Non EMI, Credit and
+                  Debit Card EMI TransactionsT&C
+                </li>
+
+                <li>
+                  <span class="bi bi-tag-fill text-success"> </span>Special
+                  PriceGet extra ₹6901 off (price inclusive of
+                  cashback/coupon)T&C
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'View2'">
+          <img src="assets/View1.png" width="500" height="500" />
+        </div>
+
+        <div *ngSwitchCase="'View3'">
+          <div>
+            <h3>Key Features</h3>
+            <ul>
+              <li>Display: 6.1 inches (15.54 cm), Super Retina XDR Display</li>
+              <li>Memory: 128GB ROM</li>
+              <li>Processor: Apple A16 Bionic Chip, Hexa Core</li>
+              <li>Camera: 48 MP + 12 MP Dual Rear & 12 MP Front Camera</li>
+              <li>Battery: 15W MagSafe Wireless Charging</li>
+              <li>USP: Dynamic Island, IP68 Water Resistant</li>
+            </ul>
+          </div>
+        </div>
+
+        <div *ngSwitchDefault>
+          <h4>Please Select View</h4>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        function bodyload(){
+            var button = document.createElement("button");
+            button.innerHTML="Register";
+            document.querySelector("div").appendChild(button);
+        }
+    </script> -->
+    <script>
+        function bodyload(){
+            var categories = ["Electronics","Footwear","Fashion"];
+            for(var item of categories)
+            {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                document.querySelector("select").appendChild(option);
+            }
+        }
+
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>Elements</h2>
+    <!-- <div>
+
+    </div> -->
+    <select>
+
+    </select>
+</body>
+</html>

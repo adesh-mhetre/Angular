@@ -1,0 +1,98 @@
+<!-- <div class="container-fluid">
+  <div class="mt-4 row">
+    <div class="col">
+      <ol>
+        <li *ngFor="let item of Categories">{{ item }}</li>
+      </ol>
+    </div>
+    <div class="col">
+      <select>
+        <option *ngFor="let item of Categories">{{ item }}</option>
+      </select>
+    </div>
+    <div class="col">
+      <ul class="list-unstyled">
+        <li *ngFor="let item of Categories"><input type="checkbox">{{item}}</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="btn-group-vertical">
+        <button class="btn btn-primary mt-2" *ngFor="let item of Categories">
+            {{item}}
+        </button>
+      </div>
+    </div>
+    <div class="col">
+        <div *ngFor="let item of Categories" >
+            <a href="#">{{item}}</a>
+        </div>
+    </div>
+    <div class="col">
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>Categories</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of Categories">
+                    <td>{{item}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+    <div class="mt-4">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of Products">
+                    <th>{{item.Name}}</th>
+                    <th>{{item.Price}}</th>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+  <div class="mt-4 row">
+    <div class="col">
+      <ol>
+        <li *ngFor="let item of Menu">
+          {{ item.Category }}
+          <ul>
+            <li *ngFor="let Product of item.Product">
+              {{ Product }}
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="col">
+      <select>
+        <optgroup *ngFor="let item of Menu" [label]="item.Category">
+          <option *ngFor="let product of item.Product">
+            {{ product }}
+          </option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="col">
+      <details *ngFor="let item of Menu">
+            <summary>{{item.Category}}</summary>
+            <ul>
+                <li *ngFor="let product of item.Product">
+                {{product}}</li>
+            </ul>
+      </details>
+    </div>
+  </div>
+</div>
