@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -11,4 +11,12 @@ export class FilterComponent {
   @Input() public JewelleryCount:number = 0;
   @Input() public MensCount:number = 0;
   @Input() public WomensCount:number = 0;
+  
+  public CategoryName:string = 'all';
+  
+  @Output() public CategoryChanged:EventEmitter<string> = new EventEmitter<string>();
+
+  SendCategoryName(e:any) {
+    this.CategoryChanged.emit(e.target.value);
+  }
 }

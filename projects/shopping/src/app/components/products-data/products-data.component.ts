@@ -13,7 +13,7 @@ export class ProductsDataComponent implements OnInit{
   public JewelleryCount:number = 0;
   public MensCount:number = 0;
   public WomensCount:number = 0;
-
+  
   ngOnInit(): void {
     fetch('http://fakestoreapi.com/products')
     .then(responce=>responce.json())
@@ -24,8 +24,25 @@ export class ProductsDataComponent implements OnInit{
       this.JewelleryCount = data.filter((product:any) => product.category=='jewelery').length;
       this.MensCount = data.filter((product:any) => product.category=="men's clothing").length;
       this.WomensCount = data.filter((product:any) => product.category=="women's clothing").length;
-
+      
     });
+  }
+
+  public GetCategoryName(e:any) {
+    if(e=='all'){
+      fetch(`http://fakestoreapi.com/products`)
+      .then(responce=>responce.json())
+      .then(data=>{
+        this.Products=data;     
+      });
+    }
+    else{
+      fetch(`http://fakestoreapi.com/products/category/${e}`)
+      .then(responce=>responce.json())
+      .then(data=>{
+        this.Products=data;     
+      });
+    }
   }
 
 }
