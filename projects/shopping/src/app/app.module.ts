@@ -24,6 +24,8 @@ import { EmiComponent } from './components/emi/emi.component';
 import { BmiComponent } from './components/bmi/bmi.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { ProductsDataComponent } from './components/products-data/products-data.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ChildComponent } from './components/child/child.component';
     BmiComponent,
     ParentComponent,
     ChildComponent,
+    ProductsDataComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { ChildComponent } from './components/child/child.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [ParentComponent]
+  bootstrap: [ProductsDataComponent]
 }) 
 export class AppModule { }
  
