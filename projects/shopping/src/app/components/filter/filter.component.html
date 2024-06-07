@@ -6,3 +6,4 @@
     <li class="d-flex justify-content-between mb-2"> <span><input type="radio"  value="men's clothing" (change)="SendCategoryName($event)" class="form-check-input" name="category">Men's Clothing</span> <span class="badge bg-primary">{{MensCount}}</span></li>
     <li class="d-flex justify-content-between"> <span><input type="radio"  value="women's clothing" (change)="SendCategoryName($event)" class="form-check-input" name="category">Women's Clothing</span> <span class="badge bg-primary">{{WomensCount}}</span></li>
 </ul>
+<button (click)="SendClickButton($event)">Send</button>

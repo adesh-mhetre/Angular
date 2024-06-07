@@ -15,8 +15,13 @@ export class FilterComponent {
   public CategoryName:string = 'all';
   
   @Output() public CategoryChanged:EventEmitter<string> = new EventEmitter<string>();
+  @Output() public SendClick:EventEmitter<any> = new EventEmitter<any>();
 
-  SendCategoryName(e:any) {
+  public SendCategoryName(e:any) {
     this.CategoryChanged.emit(e.target.value);
+  }
+
+  public SendClickButton(e:any) {
+    this.SendClick.emit({name:'samsung tv', price:'10000'});
   }
 }

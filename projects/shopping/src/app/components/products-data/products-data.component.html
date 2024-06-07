@@ -4,7 +4,7 @@
     </header>
     <section class="row">
         <nav class="col-3">
-            <app-filter [AllCount]="AllCount" [ElectronicCount]="ElectronicCount" [JewelleryCount]="JewelleryCount" [MensCount]="MensCount" [WomensCount]="WomensCount" (CategoryChanged)="GetCategoryName($event)"></app-filter>
+            <app-filter [AllCount]="AllCount" [ElectronicCount]="ElectronicCount" [JewelleryCount]="JewelleryCount" [MensCount]="MensCount" [WomensCount]="WomensCount" (CategoryChanged)="GetCategoryName($event)" (SendClick)="GetProductData($event)"></app-filter>
         </nav>
         <main class="col-9 d-flex flex-wrap overflow-auto" style="height: 600px;">
             <div *ngFor="let item of Products" class="card m-2 p-2" style="width: 200px;">

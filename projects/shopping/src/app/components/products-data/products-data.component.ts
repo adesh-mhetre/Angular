@@ -45,4 +45,9 @@ export class ProductsDataComponent implements OnInit{
     }
   }
 
+  public GetProductData(e:any)
+  {
+    alert(JSON.stringify(e))
+  }
+
 }
