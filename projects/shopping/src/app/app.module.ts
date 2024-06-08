@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +30,10 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { ProductsDataComponent } from './components/products-data/products-data.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -52,14 +60,23 @@ import { FilterComponent } from './components/filter/filter.component';
     ChildComponent,
     ProductsDataComponent,
     FilterComponent,
+    MaterialDemoComponent,
+    PipeDemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ScrollingModule
   ],
-  providers: [],
-  bootstrap: [ProductsDataComponent]
+  providers: [
+    provideAnimationsAsync()
+  ],
+  bootstrap: [PipeDemoComponent]
 }) 
 export class AppModule { }
  

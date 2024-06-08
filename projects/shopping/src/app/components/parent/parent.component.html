@@ -1,6 +1,18 @@
-<div class="container-fluid m-3 p-4 bg-dark text-white" style="height: 400px;">
+<!-- <div class="container-fluid m-3 p-4 bg-dark text-white" style="height: 400px;">
     <h2>Parent Container<button (click)="SendClick()">Send Msg To Child</button></h2>
-
     {{msgFromChild}}
     <app-child [MSGFromParent]="msg" (ChildClick)="GetMessageFromChild($event)"></app-child>
+    <h3>Parent Component</h3>
+</div> -->
+    
+    
+    <!----------- 35th Video ---------->
+<div class="container-fluid m-3 p-4 bg-dark text-white" style="height: 400px;">
+    <h2>Parent Container</h2>
+    <dl>
+        <dt>User Name</dt>
+        <!-- <dd><input type="text" ngModel #UserName="ngModel"></dd> -->
+        <dd><input type="text" [(ngModel)]="UserName"></dd>
+    </dl>
+    <app-child [UserName]="UserName"></app-child>
 </div>

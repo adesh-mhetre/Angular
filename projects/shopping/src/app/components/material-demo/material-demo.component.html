@@ -1,0 +1,48 @@
+<!-- <div class="container-fluid">
+    <h2>BootStrap Input</h2>
+    <div class="w-25">
+        <label class="form-label">User Name</label>
+        <div>
+            <input type="text" placeholder="Enter Name" class="form-control">
+            </div>
+            </div>
+            <hr>
+            <h2>Material Input</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input type="text" matInput placeholder="Enter Name">
+                </mat-form-field>                
+</div> -->
+
+
+<!-------------- date picker ----------------->
+
+<!-- <div class="container-fluid">
+    <h2>Date Picker</h2>
+    <mat-form-field appearance="outline">
+        <mat-label >Choose a date</mat-label>
+        <mat-datepicker-toggle matSuffix [for]="deprarture"></mat-datepicker-toggle>
+        <input [matDatepicker]="deprarture" type="text" matInput>
+        <mat-datepicker #deprarture></mat-datepicker>
+    </mat-form-field>
+</div> -->
+
+
+<!----- component development kit ----->
+
+<div class="container-fluid">
+    <h2>Without Lazy Loading</h2>
+    <div class="overflow-auto" style="height: 300px; width: 250px; border: 1px solid black; padding: 5px;">
+        <div *ngFor="let item of Products">
+            <img [src]="item.image" width="150" height="150">
+        </div>
+    </div>
+    <h2>With Lazy Loading</h2>
+    <cdk-virtual-scroll-viewport itemSize="100" style="height: 300px; width: 250px; border: 1px solid black; padding: 5px;">
+        <div *cdkVirtualFor="let item of Products">
+            <img [src]="item.image" height="150" width="150">
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>
+
+
