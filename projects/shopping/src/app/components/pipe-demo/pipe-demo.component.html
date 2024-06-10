@@ -1,1 +1,13 @@
-<p>pipe-demo works!</p>
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Name</dt>
+        <dd>{{Product.Name | titlecase}}</dd>
+        <dt>Price</dt>
+        <dd>{{Product.Price | number:'5.3'}}</dd>
+        <dt>Mfd</dt>
+        <dd>{{Product.Mfd | date : 'dd-MMM-yyyy'}}</dd>
+        <dt>Interest Rate</dt>
+        <dd>{{Product.Rate | percent:'2.2'}}</dd>
+    </dl>
+</div>
