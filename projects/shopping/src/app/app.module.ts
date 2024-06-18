@@ -35,6 +35,9 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { SentencePipe } from './pipes/sentence.pipe';
+import { CaptchaService } from './service/captcha.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import { SentencePipe } from './pipes/sentence.pipe';
     FilterComponent,
     MaterialDemoComponent,
     PipeDemoComponent,
-    SentencePipe
+    SentencePipe,
+    ServiceDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -73,12 +77,15 @@ import { SentencePipe } from './pipes/sentence.pipe';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule,
+    
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    
   ],
-  bootstrap: [PipeDemoComponent]
+  bootstrap: [ServiceDemoComponent]
 }) 
 export class AppModule { }
  
