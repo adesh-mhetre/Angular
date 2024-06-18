@@ -34,6 +34,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
+import { SentencePipe } from './pipes/sentence.pipe';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
     ProductsDataComponent,
     FilterComponent,
     MaterialDemoComponent,
-    PipeDemoComponent
+    PipeDemoComponent,
+    SentencePipe
   ],
   imports: [
     BrowserModule,

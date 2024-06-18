@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <h2>Product Details</h2>
     <dl>
         <dt>Name</dt>
@@ -10,4 +10,83 @@
         <dt>Interest Rate</dt>
         <dd>{{Product.Rate | percent:'2.2'}}</dd>
     </dl>
+</div> -->
+
+
+<!-- JSON -->
+<!-- <div class="container-fluid">
+    <h2>Product Details</h2>
+    <pre>
+        {{Product|json}}
+    </pre>
+</div> -->
+
+
+<!-- Slice -->
+ <!-- <div class="container-fluid">
+    <h2>Product Details</h2>
+    <ol>
+        <li *ngFor="let item of categories | slice:2:4">
+            {{item | slice:0:6}}
+        </li>
+    </ol>
+ </div> -->
+
+
+ <!-- keyvalue -->
+<!-- <div class="container-fluid">
+    <h2>Product Details</h2>
+    <ol class="list-unstyled">
+        <li *ngFor="let item of categories | keyvalue">
+            {{item.key}} - {{item.value}}
+        </li>
+    </ol>
+ </div> -->
+
+
+ <!-- i18nSelect -->
+<!-- <div class="container-fluid">
+    <h2>Your Cart</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Delivery Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let product of Products">
+                    <td>{{product.Name}}</td>
+                    <td>{{product.ShippedTo}}</td>
+                    <td>
+                        {{product.ShippedTo | i18nSelect:Status}}
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+
+
+<!-- i18nPlural -->
+
+<div class="container-fluid">
+    <h1>{{title|sentence}}</h1>
+    <h2>Plural Demo</h2> 
+    <div class="mb-3 input-group w-25">
+        <input class="form-control" type="text" [(ngModel)]="Message"><button (click)="SendClick()" class="btn btn-primary"><span class="bi bi-send"></span></button>
+    </div>
+    <button (click)="ShowClick()"   class="btn btn-primary position-relative" >
+        <span class="bi bi-bell"></span>{{Messages.length | i18nPlural:NotifivationMap }}
+        <span class="badge bg-dark position-absolute end-0 top-0 rounded rounded-circle">{{Count}}</span>
+    </button>
+    <div class="mt-4" *ngIf="ShowMessagaes">
+            <ul class="list-unstyled">
+                <li *ngFor="let msg of Messages">
+                    {{msg}}
+                </li>
+            </ul>
+    </div>
+    
 </div>
