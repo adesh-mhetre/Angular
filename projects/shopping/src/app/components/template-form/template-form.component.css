@@ -1,4 +1,4 @@
-.invalid-style {
+/* .invalid-style {
     background-color: rgb(255, 198, 198);
 }
 .valid-style {
@@ -6,4 +6,19 @@
 }
 form {
     padding: 20px;
+} */
+
+input.ng-invalid{
+    border:2px solid  red;
+}
+input.ng-valid{
+    border:2px solid  green;
+    box-shadow: 2px 2px 2px green;
+}
+
+form.ng-invalid{
+    background-color: rgb(255, 143, 143);
+}
+form.ng-valid{
+    background-color: rgb(143, 255, 180);
 }

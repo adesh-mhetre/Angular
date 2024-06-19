@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <h2>Register User</h2>
+    <form [formGroup]="frmRegister" (submit)="SubmitClick(frmRegister.value)">
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" formControlName="UserName" ></dd>
+            <dt>Age</dt>
+            <dd><input type="number" formControlName="Age"></dd>
+            <dt>Mobile</dt>
+            <dd><input type="text" formControlName="Mobile"></dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</div>

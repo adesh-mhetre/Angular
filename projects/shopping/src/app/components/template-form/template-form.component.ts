@@ -10,4 +10,14 @@ export class TemplateFormComponent {
     alert(JSON.stringify(data))
   }
 
+  public CityError:string="";
+
+  public CityChannged(e:any):void{
+    if(e.target.value==-1){
+      this.CityError = "Please select your City";
+    }
+    else{
+      this.CityError="";
+    }
+  }
 }

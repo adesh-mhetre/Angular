@@ -15,7 +15,7 @@ import { NetflixHeaderComponent } from './Netflix/netflix-header/netflix-header.
 import { NetflixMainComponent } from './Netflix/netflix-main/netflix-main.component';
 import { NetflixRegisterComponent } from './Netflix/netflix-register/netflix-register.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { FakestoreComponent } from './components/fakestore/fakestore.component';
 import { ContentProjectionComponent } from './components/content-projection/content-projection.component';
 import { MobileDetailsComponent } from './components/mobile-details/mobile-details.component';
@@ -39,6 +39,7 @@ import { CaptchaService } from './service/captcha.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { TemplateFormComponent } from './components/template-form/template-form.
     PipeDemoComponent,
     SentencePipe,
     ServiceDemoComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -81,13 +83,13 @@ import { TemplateFormComponent } from './components/template-form/template-form.
     MatNativeDateModule,
     ScrollingModule,
     HttpClientModule,
-    
+    ReactiveFormsModule, 
   ],
   providers: [
     provideAnimationsAsync(),
     
   ],
-  bootstrap: [TemplateFormComponent]
+  bootstrap: [ReactiveFormComponent]
 }) 
 export class AppModule { }
  

@@ -29,7 +29,7 @@
     </dl>
 </div> -->
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
       <div class="col-3">
           <form #frmRegister="ngForm" (submit)="SubmitClick(frmRegister.value)">
@@ -67,5 +67,51 @@
            </dl>
       </div>
     </div>
+  </div> -->
+
+
+
+  <!-- Angular Error Object -->
+
+  <div class="container-fluid">
+    <form class="mt-2 p-4" #frmRegistration="ngForm">
+        <h2>Register User</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" required minlength="4" maxlength="10"  name="UserName" ngModel #UserName="ngModel"></dd>
+            <dd class="text-danger" *ngIf="frmRegistration.submitted && UserName.invalid">
+                <div *ngIf="UserName.errors?.['required']">User Name Required</div>
+                <div *ngIf="UserName.errors?.['minlength']">User Name too short min 4 chars required</div>
+                <div *ngIf="UserName.errors?.['maxlength']">User Name too long max 10 chars required</div>
+                <!-- <span>User Name Invalid</span> -->
+            </dd>
+
+            <dt>Password</dt>
+            <dd><input type="password" name="Password" ngModel #Password="ngModel" required pattern="(?=.*[A-Z])\w{4,15}"></dd>
+            <dd class="text-danger" *ngIf="(frmRegistration.submitted && Password.invalid) || (Password.touched && Password.invalid )">
+                <div *ngIf="Password.errors?.['required']">Password Required</div> 
+                <div *ngIf="Password.errors?.['pattern']">Password 4 to 15 chars with at least 1 uppercase letter.</div>
+            </dd>
+
+            <dt>Mobile</dt>
+            <dd><input type="text" name="Mobile" required pattern="\+91\d{10}" ngModel #Mobile="ngModel"></dd>
+            <dd class="text-danger" *ngIf="frmRegistration.submitted && Mobile.invalid">
+                <div *ngIf="Mobile.errors?.['required']">Mobile Required</div>
+                <div *ngIf="Mobile.errors?.['pattern']">Invalid Mobile +91 and 10 digits</div>
+            </dd>
+            
+            <dt>City</dt>
+            <dd>
+                <select (change)="CityChannged($event)" ngModel #City="ngModel"  name="City">
+                    <Option value="-1">Select Your City</Option>
+                    <Option value="Hyd">Hyd</Option>
+                    <Option value="Pune">Pune</Option>
+                    <Option value="Delhi">Delhi</Option>
+                </select>
+            </dd>
+            <dd class="text-danger">{{CityError}}</dd>
+        </dl>
+        <button class="btn btn-primary">Register</button>
+    </form>
   </div>
   
