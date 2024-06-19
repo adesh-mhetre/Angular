@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <form [formGroup]="frmRegister">
+        <h2>Register</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName="Name"></dd>
+            <dd class="text-danger" *ngIf="Name.touched  && Name.invalid">
+                <div *ngIf="Name.errors?.['required']">Name Required</div>
+                <div *ngIf="Name.errors?.['minlength']">Name too Short Min 4 char required</div>
+            </dd>
+            <dt>Mobile No</dt>
+            <dd><input type="text" formControlName="Mobile"></dd>
+            <!-- <dd class="text-danger" *ngIf="Mobile.touched && Mobile.invalid">
+                <div *ngIf="Mobile.errors?.['touched']">Mobile No Required</div>
+                <div *ngIf="Mobile.errors?.['invalid']">Invalid Mobile +91 and 10 digits</div>
+            </dd> -->
+            <dd class="text-danger" *ngIf="Mobile.touched && Mobile.invalid">
+                <div *ngIf="Mobile.errors?.['required']">Mobile No Required</div>
+                <div *ngIf="Mobile.errors?.['pattern']">Invalid Mobile +91 and 10 digits</div>
+            </dd>
+        </dl>
+        <button>Submit</button>
+    </form>
+</div>

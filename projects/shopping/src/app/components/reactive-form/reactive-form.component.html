@@ -1,4 +1,6 @@
-<div class="container-fluid">
+
+<!-- Reactive forms -->
+<!-- <div class="container-fluid">
     <h2>Register User</h2>
     <form [formGroup]="frmRegister" (submit)="SubmitClick(frmRegister.value)">
         <dl>
@@ -10,5 +12,36 @@
             <dd><input type="text" formControlName="Mobile"></dd>
         </dl>
         <button>Register</button>
+    </form>
+</div> -->
+
+
+<!-- Nested Forms -->
+<div class="container-fluid">
+    <h2>Product Register</h2>
+    <form [formGroup]="frmRegister" (ngSubmit)="RegisterClick(frmRegister.value)">
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName="Name"></dd>
+            <dt>Price</dt>
+            <dd><input type="number" formControlName="Price"></dd>
+        </dl>
+        <div class="mb-3 mt-2">
+            <h3>Upload Photos <button type="button" (click)="AddMoreClick()" class="btn btn-link">Add More</button></h3>
+            <div class="mt-2 mb-2" *ngFor="let item of Photos.controls; let i=index">
+                <input type="file" formControlName="i"> <button type="button" (click)="RemoveClick(i)" class="btn btn-danger"><span class="bi bi-trash"></span></button>
+            </div>
+        </div>
+        <div formGroupName="frmVendor">
+            <h3>Vendor Details</h3>
+                <dl>
+                    <dt>Vendor Name</dt>
+                    <dd><input type="text" formControlName="VendorName"></dd>
+                    <dt>Rating</dt>
+                    <dd><input type="number" formControlName="VendorRating"></dd>
+                </dl>
+        </div>
+        
+        <button>Register</button><button type="button" (click)="UpdatePrice()">Update</button>
     </form>
 </div>

@@ -40,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { RectiveValidationsComponent } from './components/rective-validations/rective-validations.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     SentencePipe,
     ServiceDemoComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    RectiveValidationsComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +91,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     provideAnimationsAsync(),
     
   ],
-  bootstrap: [ReactiveFormComponent]
+  bootstrap: [RectiveValidationsComponent]
 }) 
 export class AppModule { }
  
