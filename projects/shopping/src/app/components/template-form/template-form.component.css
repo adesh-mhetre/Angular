@@ -1,0 +1,9 @@
+.invalid-style {
+    background-color: rgb(255, 198, 198);
+}
+.valid-style {
+    background-color: rgb(221, 255, 221);
+}
+form {
+    padding: 20px;
+}

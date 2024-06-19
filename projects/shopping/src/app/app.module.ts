@@ -38,6 +38,7 @@ import { SentencePipe } from './pipes/sentence.pipe';
 import { CaptchaService } from './service/captcha.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
+import { TemplateFormComponent } from './components/template-form/template-form.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ServiceDemoComponent } from './components/service-demo/service-demo.com
     MaterialDemoComponent,
     PipeDemoComponent,
     SentencePipe,
-    ServiceDemoComponent
+    ServiceDemoComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,7 @@ import { ServiceDemoComponent } from './components/service-demo/service-demo.com
     provideAnimationsAsync(),
     
   ],
-  bootstrap: [ServiceDemoComponent]
+  bootstrap: [TemplateFormComponent]
 }) 
 export class AppModule { }
  

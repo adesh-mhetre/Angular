@@ -1,0 +1,71 @@
+<!-- <div class="container-fluid">
+    <form #frmRegister="ngForm" (submit)="SubmitClick(frmRegister.value)">
+        <h2>Registration Form</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" name="UserName" ngModel #UserName="ngModel"></dd>
+            <dt>Age</dt>
+            <dd><input type="number" name="Age" ngModel #Age="ngModel"></dd>
+            <dt>City</dt>
+            <dd>
+                <select name="City" ngModel #City="ngModel">
+                    <option>Delhi</option>
+                    <option>Hyd</option>
+                    <option>Pune</option>
+                </select>
+            </dd>
+        </dl>
+        <button>Register</button>
+    </form>
+
+    <hr>
+    <dl>
+        <dt>User Name</dt>
+        <dd>{{UserName.value}}</dd>
+        <dt>Age</dt>
+        <dd>{{Age.value}}</dd>
+        <dt>City</dt>
+        <dd>{{City.value}}</dd>
+    </dl>
+</div> -->
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+          <form #frmRegister="ngForm" (submit)="SubmitClick(frmRegister.value)">
+              <h2>Register User</h2>
+              <dl>
+                  <dt>User Name</dt>
+                  <dd><input name="UserName" required ngModel #UserName="ngModel" type="text"></dd>
+                  <dt>Mobile</dt>
+                  <dd><input name="Mobile" required  pattern="\+91\d{10}" ngModel #Mobile="ngModel" type="text"></dd>
+                  <dt>City</dt>
+                  <dd>
+                      <select name="City" ngModel #City="ngModel">
+                          <option>Delhi</option>
+                          <option>Hyd</option>
+                      </select>
+                  </dd>
+              </dl>
+              <button [disabled]="frmRegister.invalid">Register</button>
+              <button [disabled]="frmRegister.pristine">Save</button>
+          </form>
+      </div>
+      <div class="col-9">
+           <h3>Form State Services</h3>
+           <dl>
+              <dt>Pristine [Form is Untouched]</dt>
+              <dd>{{frmRegister.pristine}}</dd>
+              <dt>Dirty [Form Modified]</dt>
+              <dd>{{frmRegister.dirty}}</dd>
+              <dt>Valid [All Fields are valid]</dt>
+              <dd>{{frmRegister.valid}}</dd>
+              <dt>Invalid [Any one Field is not Valid]</dt>
+              <dd>{{frmRegister.invalid}}</dd>
+              <dt>Form Submitted</dt>
+              <dd>{{frmRegister.submitted}}</dd>
+           </dl>
+      </div>
+    </div>
+  </div>
+  
