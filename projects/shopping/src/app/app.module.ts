@@ -5,7 +5,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NetflixRegister } from './components/netflix-register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -77,7 +76,6 @@ import { RectiveValidationsComponent } from './components/rective-validations/re
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,

@@ -1,0 +1,19 @@
+<h2>Product Details</h2>
+<div class="row">
+    <div class="col-3">
+        <dl>
+            <dt>Title</dt>
+            <dd>{{Product.title}}</dd>
+            <dt>Price</dt>
+            <dd>{{Product.price}}</dd>
+            <dt>Rating</dt>
+            <dd><span class="bi bi-star-fill"></span>{{Product.rating.rate}} [{{Product.rating.count}}]</dd>
+            <dd><a routerLink="more/{{Product.id}}">More</a></dd>
+        </dl>
+    </div>
+    <div class="col-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<a routerLink="/home">Back To Prodcut</a>
